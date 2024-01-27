@@ -4,34 +4,40 @@ function game(rockPaperScissor) {
   return rockPaperScissor[Math.floor(Math.random() * rockPaperScissor.length)];
 }
 
-// function that triggers the result between player and computer
-function playRound(playerSelection, computerSelection) {
-  playerSelection = playerSelection.toLowerCase();
-  computerSelection = computerSelection.toLowerCase();
-
-  if (playerSelection === computerSelection) {
-    alert("TIE");
-  } else if (playerSelection === "rock") {
-    if (computerSelection === "paper") {
-      alert("Computer Wins!");
-    } else {
-      alert("Player Wins!");
-    }
-  } else if (playerSelection === "paper") {
-    if (computerSelection === "scissor") {
-      alert("Computer Wins!");
-    } else {
-      alert("Player Wins!");
-    }
-  } else if (playerSelection === "scissor") {
-    if (computerSelection === "rock") {
-      alert("Computer Wins!");
-    } else {
-      alert("Player Wins!");
+function newGame(playerSelection) {
+  function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+  
+    if (playerSelection === computerSelection) {
+      alert("TIE");
+    } else if (playerSelection === "rock") {
+      if (computerSelection === "paper") {
+        alert("Paper beats rock. Computer Wins!");
+      } else {
+        alert("Rock beats Scissor. Player Wins!");
+      }
+    } else if (playerSelection === "paper") {
+      if (computerSelection === "scissor") {
+        alert("Scissor beats paper. Computer Wins!");
+      } else {
+        alert("Paper beats rock. Player Wins!");
+      }
+    } else if (playerSelection === "scissor") {
+      if (computerSelection === "rock") {
+        alert("Rock beats scissor. Computer Wins!");
+      } else {
+        alert("Scissor beats paper. Player Wins!");
+      }
     }
   }
+  const computerSelection = game(rockPaperScissor);
+  playRound(playerSelection, computerSelection);
 }
-const computerSelection = game(rockPaperScissor);
-let playerStart = prompt("Choose your skill: Rock, Paper, Scissor");
 
-playRound(playerStart, computerSelection);
+// Add loop to prompt
+const numberOfGames = 3; 
+for (let i = 0; i < numberOfGames; i++) {
+  let playerStart = prompt(`Game ${i + 1}: Choose your skill: Rock, Paper, Scissor`)
+  newGame(playerStart);
+}
