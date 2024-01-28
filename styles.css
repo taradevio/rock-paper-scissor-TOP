@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+#game {
+    border: 2px solid;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game > h1 {
+    width: 55%;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#game ol {
+    width: 50%;
+}
+
+#game ol > li {
+    font-size: 20px;
+    padding: 8px 0;
+}
+
+li:nth-child(3) span {
+    font-size: 20px;
+    font-weight: 600;
+}
