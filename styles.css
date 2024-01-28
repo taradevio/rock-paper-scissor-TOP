@@ -6,7 +6,6 @@
 }
 
 #game {
-    border: 2px solid;
     display: flex;
     height: 100vh;
     flex-direction: column;
@@ -27,6 +26,10 @@
 #game ol > li {
     font-size: 20px;
     padding: 8px 0;
+}
+
+#game > .image {
+    margin-top: 0.5rem;
 }
 
 li:nth-child(3) span {
